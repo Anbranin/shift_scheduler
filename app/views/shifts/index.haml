@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Qualification
+      %th Users
+  %tbody
+    - @shifts.each do |shift|
+      %tr
+        %td= shift.name
+        %td= shift.qualification_name
+        %td
+          %ul
+            - shift.users.each do |user|
+              %li= user.proper_name
