@@ -9,6 +9,7 @@ gem 'bcrypt_pbkdf'
 gem "haml"
 gem "pry-byebug"
 gem 'pg'
+gem 'simple_calendar'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
