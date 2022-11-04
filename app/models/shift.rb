@@ -1,6 +1,6 @@
 class Shift < ApplicationRecord
   validates :name, presence: true
-  belongs_to :qualification
+  belongs_to :qualification, optional: true
   has_many :signups
   has_many :users, through: :signups
 
