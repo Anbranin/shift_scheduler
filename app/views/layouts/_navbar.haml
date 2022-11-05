@@ -1,0 +1,19 @@
+%nav#ttm_navbar.navbar.navbar-expand-lg.navbar-light
+  .container-fluid
+    = link_to 'TTM Scheduler', root_url, class: 'navbar-brand'
+    %ul.navbar-nav.me-auto.my-2.my-lg-0
+      %li.nav-item
+        = link_to 'Shifts', root_url, class: 'nav-link'
+      %li.nav-item.dropdown
+        = link_to 'User Management', '#', class: 'nav-link dropdown-toggle',
+                                          id: 'navbarDropdownMenuLink',
+                                          role: 'button',
+                                          data: { bs_toggle: 'dropdown' },
+                                          aria: { expanded: false }
+        %ul.dropdown-menu{ aria: { labelled_by: 'navbarDropdownMenuLink' } }
+          %li
+            = link_to 'Users', '#', class: 'dropdown-item'
+          %li
+            = link_to 'New user', '#', class: 'dropdown-item'
+      %li.nav-item
+        = link_to 'Qualifications', qualifications_url, class: 'nav-link'
