@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+@import "simple_calendar";
+
+.simple-calendar {
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  .calendar-heading {
+    height: 50px;
+    font-size: 1.5em;
+    padding: 1em;
+    .calendar-title {
+      padding: 1em;
+    }
+  }
+
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}
