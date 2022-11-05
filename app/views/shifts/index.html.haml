@@ -1,0 +1,12 @@
+.container.mt-5.text-center
+  %h1 Shifts
+  = month_calendar(events: @shifts) do |date, daily_events|
+    .day
+      = date.day
+    - daily_events.each do |event|
+      .card
+        .card-body
+          %h5.card-title= link_to event.name, edit_shift_path(event)
+          %h6.card-subtitle.mb-2.text-muted= event.times
+          %p.card-text= event.description
+  = link_to 'Add new shift', new_shift_path

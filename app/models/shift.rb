@@ -7,4 +7,12 @@ class Shift < ApplicationRecord
   def qualification_name
     qualification.name
   end
+
+  def times
+    "#{start_time.strftime('%H:%M')} - #{end_time.strftime('%H:%M')}"
+  end
+
+  def description
+    "Doing something with horses"
+  end
 end

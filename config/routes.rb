@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'shifts#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :shifts
+  resources :qualifications
+  resource :users
 end
