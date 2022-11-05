@@ -1,0 +1,19 @@
+= form_with(model: @shift, local: true, html: { class: 'form offset-2' } ) do |f|
+  .row.mb-3
+    = f.label :name, class: 'form-label'
+    .col-sm-5
+      = f.text_field :name, class: 'form-control'
+  .row.mb-3
+    = f.label :start_time, class: 'form-label'
+    .col-sm-5
+      = f.datetime_field :start_time, class: 'form-control'
+  .row.mb-3
+    = f.label :end_time, class: 'form-label'
+    .col-sm-5
+      = f.datetime_field :end_time, class: 'form-control'
+  .row.mb-3
+    = f.label :qualification_id, class: 'form-label'
+    .col-sm-5
+      = f.select :qualification_id, options_from_collection_for_select(Qualification.all, :id, :name), { include_blank: true }, class: 'form-control'
+  .mb-3
+    = f.submit 'Save shift', class: 'btn btn-primary'
