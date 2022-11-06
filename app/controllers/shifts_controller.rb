@@ -32,6 +32,15 @@ class ShiftsController < ApplicationController
     end
   end
 
+  def destroy
+    @shift = Shift.find params[:id]
+    if @shift.destroy
+      redirect_to shifts_url, notice: 'shift successfully destroyed'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def shift_params
