@@ -12,8 +12,15 @@
     .col-sm-5
       = f.datetime_field :end_time, class: 'form-control'
   .row.mb-3
-    = f.label :qualification_id, class: 'form-label'
     .col-sm-5
-      = f.select :qualification_id, options_from_collection_for_select(Qualification.all, :id, :name), { include_blank: true }, class: 'form-control'
-  .mb-3
-    = f.submit 'Save shift', class: 'btn btn-primary'
+  .row.mb-3
+    = f.label :description, class: 'form-label'
+    .col-sm-5
+      = f.text_area :description, class: 'form-control'
+  %h2 Signups (shift slots)
+  #signups
+    = f.fields_for :signups, @shift.signups do |g|
+      = render 'signup_fields', f: g
+    = link_to_add_association 'add signup field', f, :signups
+    .mb-3
+      = f.submit 'Save shift', class: 'btn btn-primary'
