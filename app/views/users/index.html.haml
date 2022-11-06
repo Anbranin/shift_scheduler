@@ -1,0 +1,20 @@
+.container.mt-5
+  %h1 Users
+
+  %table.table
+    %thead
+      %th Name
+      %th Admin?
+      %th Qualifications
+      %th Actions
+    - @users.each do |user|
+      %tr
+        %td= user.full_name
+        %td
+          %i.bi.bi-check
+        %td
+          %ul
+            - user.qualifications.each do |qualification|
+              %li= qualification.name
+        %td= link_to 'edit', edit_user_url(user), class: 'btn btn-secondary'
+  = link_to 'Add new user', new_user_url, class: 'btn btn-dark'
