@@ -1,0 +1,16 @@
+.container.mt-5
+  %h1 Qualifications
+
+  %table.table
+    %thead
+      %th Name
+      %th Users
+      %th Actions
+    - @qualifications.each do |qualification|
+      %tr
+        %td= qualification.name
+        %td
+          %ul
+            - qualification.users.each do |user|
+              %li= user.proper_name
+        %td= link_to 'edit', edit_qualification_url(qualification)
