@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "cocoon"
 gem "rails", "~> 7.0.4"
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
