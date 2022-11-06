@@ -1,9 +1,11 @@
 .row.mb-3.nested-fields
   .col-sm-5
     = f.label :qualification_id, class: 'form-label'
-    = f.select :qualification_id, options_from_collection_for_select(Qualification.all, :id, :name, f.object.qualification_id), { include_blank: true }, class: 'form-control'
+    = f.select :qualification_id, options_from_collection_for_select(Qualification.all, :id, :name, f.object.qualification_id),
+      { include_blank: 'No Qualification Needed' }, class: 'form-control'
   .col-sm-5
     = f.label :user_id, class: 'form-label'
-    = f.select :user_id, options_from_collection_for_select(User.all, :id, :proper_name, f.object.user_id), { include_blank: true }, class: 'form-control'
+    = f.select :user_id, options_from_collection_for_select(User.all, :id, :proper_name, f.object.user_id),
+      { include_blank: 'Open!' }, class: 'form-control'
   .col-sm-2
     = link_to_remove_association 'X', f, class: 'btn btn-danger remove-association'
