@@ -1,8 +1,10 @@
 class Shift < ApplicationRecord
   validates :name, presence: true
-  belongs_to :qualification, optional: true
-  has_many :signups
+  has_many :signups, dependent: :destroy
   has_many :users, through: :signups
+  has_many :qualifications, through: :signups
+
+  accepts_nested_attributes_for :signups, allow_destroy: true
 
   def qualification_name
     qualification.name
@@ -10,9 +12,5 @@ class Shift < ApplicationRecord
 
   def times
     "#{start_time.strftime('%H:%M')} - #{end_time.strftime('%H:%M')}"
-  end
-
-  def description
-    "Doing something with horses"
   end
 end
