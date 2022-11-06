@@ -1,3 +1,2 @@
 - add flash messaging
-- add description to shifts
-- add delete button to shift on edit page
+- add cancel button on all forms that just goes back

@@ -1,6 +1,6 @@
 class ShiftsController < ApplicationController
   def index
-    @date = Time.zone.now # later: date can be params[:date]?
+    @date = Time.zone.now
     @shifts = Shift.where(
       start_time: @date.beginning_of_month.beginning_of_week..@date.end_of_month.end_of_week
     )
