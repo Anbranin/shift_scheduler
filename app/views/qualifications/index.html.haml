@@ -13,4 +13,5 @@
           %ul
             - qualification.users.each do |user|
               %li= user.proper_name
-        %td= link_to 'edit', edit_qualification_url(qualification)
+        %td= link_to 'edit', edit_qualification_url(qualification), class: 'btn btn-secondary'
+  = link_to 'Add new qualification', new_qualification_url, class: 'btn btn-dark'

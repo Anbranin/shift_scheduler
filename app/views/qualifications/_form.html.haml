@@ -1,7 +1,12 @@
 = form_with(model: @qualification, html: { class: 'form offset-2' } ) do |f|
   .row.mb-3
     = f.label :name, class: 'form-label'
-    .col-sm-5
+    .col-sm-6
       = f.text_field :name, class: 'form-control'
+  %h2 Users
+  #credentials
+    = f.fields_for :credentials, @qualification.credentials do |g|
+      = render 'credential_fields', f: g
+    = link_to_add_association 'add user', f, :credentials
   .mb-3
     = f.submit 'Save qualification', class: 'btn btn-primary'
