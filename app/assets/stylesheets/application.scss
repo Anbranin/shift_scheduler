@@ -52,3 +52,14 @@
 
   .has-events {}
 }
+
+nav#ttm_navbar.navbar.navbar-expand-lg.navbar-light {
+    background-color: darkgray;
+}
+.nested-fields {
+  .remove-association {
+    width: 3em;
+    display: block;
+    margin-top: 2rem;
+  }
+}
